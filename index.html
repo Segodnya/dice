@@ -12,9 +12,28 @@
     <header class="header">Сыграем?</header>
     <main class="content">
       <section class="section field"></section>
-      <section class="section menu"></section>
+      <section class="section menu">
+        <div class="div-cube-amount">
+          <button class="button button__add">+</button>
+          <span class="cube-amount">1</span>
+          <button class="button button__del">-</button>
+        </div>
+        <div class="div-cube-type">
+          <span class="span"><input type="radio" name="d" value="4" class="button button__d4" />4</span>
+          <span class="span"><input type="radio" name="d" value="6" class="button button__d6" />6</span>
+          <span class="span"><input type="radio" name="d" value="10" class="button button__d10" />10</span>
+          <span class="span"><input type="radio" name="d" value="14" class="button button__d14" />14</span>
+          <span class="span"><input type="radio" name="d" value="20" class="button button__d20" />20</span>
+        </div>
+      </section>
     </main>
     <footer class="footer">&copy; 2022</footer>
+    <div class="popup">
+      <div class="popup__container">
+        <span class="popup__text"></span>
+        <button class="button popup__button">OK</button>
+      </div>
+    </div>
     <template id="cube">
       <div class="cube"></div>
     </template>

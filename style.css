@@ -62,7 +62,6 @@
   justify-content: center;
   min-width: 320px;
   max-width: 768px;
-  height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 20px;
@@ -100,8 +99,9 @@
 
 .field {
   aspect-ratio: 1 / 1;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
   justify-content: center;
   align-items: center;
   gap: 40px;
@@ -111,6 +111,55 @@
 .menu {
   margin-top: 20px;
   height: 80px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.div-cube-amount {
+  flex-basis: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.div-cube-type {
+  flex-basis: 120px;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.div-cube-type_opened {
+  display: flex;
+}
+
+.span {
+  margin: 0;
+  padding: 5px;
+}
+.span:nth-of-type(1) {
+  background-color: red;
+}
+.span:nth-of-type(2) {
+  background-color: blue;
+}
+.span:nth-of-type(3) {
+  background-color: green;
+}
+.span:nth-of-type(4) {
+  background-color: orange;
+}
+.span:nth-of-type(5) {
+  background-color: purple;
+}
+
+.button {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
 }
 
 .footer {
@@ -130,4 +179,37 @@
   box-sizing: border-box;
   border: 1px solid var(--color-border);
   font-size: 32px;
+}
+
+.popup {
+  display: flex;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(0, 0, 0, 1);
+}
+.popup_opened {
+  height: 100vh;
+  opacity: 1;
+}
+.popup__container {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  width: 282px;
+}
+.popup__text {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
