@@ -6,6 +6,7 @@ const popup = document.querySelector(".popup");
 const popupText = document.querySelector(".popup__text");
 const popupBtn = document.querySelector(".popup__button");
 const cubeTypeNode = document.querySelector(".div-cube-type");
+const spanCubeQty = document.querySelector(".cube-amount");
 let CURRENT_CUBE = null;
 
 let CURRENT_ID = 0;
@@ -35,7 +36,6 @@ function changeDims(btn, currentId) {
 function setupMenu(e) {
   let cube = e.target;
   CURRENT_CUBE = cube;
-  document.querySelector(`.button__d${cube.dims}`).checked = true;
   cubeTypeNode.classList.add("div-cube-type_opened");
 }
 
@@ -113,6 +113,7 @@ btnAdd.addEventListener("click", () => {
   const cubesCurrent = document.querySelectorAll(".cube");
   if (cubesCurrent.length < 6) {
     insertCube();
+    spanCubeQty.textContent = document.querySelectorAll(".cube").length;
   } else {
     openPopup("Нельзя играть больше, чем с шестью кубиками!");
   }
@@ -122,6 +123,7 @@ btnDel.addEventListener("click", () => {
   const cubesCurrent = document.querySelectorAll(".cube");
   if (cubesCurrent.length > 1) {
     cubesCurrent[cubesCurrent.length - 1].remove();
+    spanCubeQty.textContent = document.querySelectorAll(".cube").length;
   } else {
     openPopup("Должен остаться хотя бы один кубик!");
   }
