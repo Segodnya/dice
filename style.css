@@ -97,6 +97,7 @@
 }
 
 .field {
+  cursor: pointer;
   min-height: 282px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
